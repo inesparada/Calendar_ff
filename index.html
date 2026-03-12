@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Book a Slot 🔥 — Forged in Fire</title>
+  <title>Book a Slot — Forged in Fire</title>
 
   <!-- Open Graph / Slack preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Book a Slot 🔥 — Forged in Fire" />
+  <meta property="og:title" content="Book a Slot — Forged in Fire" />
   <meta property="og:description" content="30 min · Present a demo & get feedback with a HappyRobot co-founder." />
   <meta property="og:image" content="https://e01-phantom-expansion.uecdn.es/216a1cde343471623850cb23ab40d98e/crop/175x33/1813x1126/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/05/17333953634925.jpg" />
 
@@ -20,142 +20,114 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background-color: #000;
+      background-color: #0a0a0a;
       color: #fff;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 20px;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* Fade-in */
+    /* Background photo with dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('https://e01-phantom-expansion.uecdn.es/216a1cde343471623850cb23ab40d98e/crop/175x33/1813x1126/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/05/17333953634925.jpg');
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(0.35);
+      z-index: 0;
+    }
+
+    /* Fade-in animation */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(12px); }
+      from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .page {
+    main {
+      position: relative;
+      z-index: 1;
       width: 100%;
-      max-width: 460px;
-      animation: fadeIn 0.5s ease both;
-    }
-
-    /* Logo */
-    .logo-wrap {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-
-    .logo-wrap img {
-      height: 22px;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
-    }
-
-    /* Founders photo */
-    .founders-photo {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      object-position: center 20%;
-      border-radius: 12px;
-      display: block;
-      margin-bottom: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* Header text */
-    .header {
-      margin-bottom: 24px;
-    }
-
-    .label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.4);
-      margin-bottom: 8px;
+      max-width: 480px;
+      padding: 32px 20px 24px;
+      animation: fadeIn 0.6s ease both;
+      text-align: center;
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 32px;
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 6px;
-      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 8px;
     }
 
     .subtitle {
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.45);
-    }
-
-    /* Divider */
-    .divider {
-      height: 1px;
-      background: rgba(255,255,255,0.08);
-      margin-bottom: 20px;
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 32px;
     }
 
     /* Cards */
     .cards {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 12px;
+      text-align: left;
     }
 
     .card {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 14px 16px;
-      border-radius: 10px;
-      background: #111;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       text-decoration: none;
       color: #fff;
       cursor: pointer;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+      transition: transform 0.18s ease, background 0.18s ease;
     }
 
     .card:hover {
-      background: #1a1a1a;
-      border-color: rgba(255,255,255,0.16);
-      transform: scale(1.015);
+      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.13);
     }
 
     .card.disabled {
       cursor: default;
-      opacity: 0.5;
+      opacity: 0.65;
     }
 
     .card.disabled:hover {
-      background: #111;
-      border-color: rgba(255, 255, 255, 0.08);
       transform: none;
+      background: rgba(255, 255, 255, 0.08);
     }
 
     /* Avatar */
     .avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 8px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 700;
       flex-shrink: 0;
       color: #fff;
     }
 
-    .avatar-pablo { background: linear-gradient(135deg, #c0392b, #e74c3c); }
-    .avatar-javi  { background: linear-gradient(135deg, #1a6fa8, #2980b9); }
-    .avatar-luis  { background: linear-gradient(135deg, #1e8449, #27ae60); }
+    .avatar-pablo  { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .avatar-javi   { background: linear-gradient(135deg, #1a6fa8, #2980b9); }
+    .avatar-luis   { background: linear-gradient(135deg, #1e8449, #27ae60); }
 
     .card-info {
       flex: 1;
@@ -163,19 +135,19 @@
     }
 
     .card-name {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
     }
 
     .card-role {
-      font-size: 12px;
-      color: rgba(255, 255, 255, 0.4);
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
       margin-top: 2px;
     }
 
     .arrow {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.25);
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.35);
       flex-shrink: 0;
     }
 
@@ -185,70 +157,50 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
       border-radius: 20px;
       padding: 3px 9px;
-      color: rgba(255, 255, 255, 0.35);
+      color: rgba(255, 255, 255, 0.55);
       flex-shrink: 0;
     }
 
     /* Footer */
     footer {
-      margin-top: 28px;
+      position: relative;
+      z-index: 1;
+      margin-top: 36px;
+      padding-bottom: 28px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 7px;
-      font-size: 11px;
-      color: rgba(255, 255, 255, 0.2);
+      gap: 8px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      animation: fadeIn 0.6s 0.2s ease both;
     }
 
     footer img {
-      height: 14px;
+      height: 28px;
+      opacity: 0.5;
       filter: brightness(0) invert(1);
-      opacity: 0.25;
     }
 
-    @media (max-width: 480px) {
-      body { padding: 28px 16px; }
-      h1   { font-size: 22px; }
-      .founders-photo { height: 100px; }
+    /* Mobile */
+    @media (max-width: 520px) {
+      h1 { font-size: 26px; }
+      main { padding: 24px 16px 16px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="page">
+  <main>
+    <h1>Book a Slot</h1>
+    <p class="subtitle">30 min · Present a demo &amp; get feedback</p>
 
-    <!-- HappyRobot logo -->
-    <div class="logo-wrap">
-      <img
-        src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/ddc194f4-de55-49cf-bfd9-de92649773de.png"
-        alt="HappyRobot"
-        onerror="this.style.display='none';"
-      />
-    </div>
-
-    <!-- Founders photo (small, at top) -->
-    <img
-      class="founders-photo"
-      src="https://e01-phantom-expansion.uecdn.es/216a1cde343471623850cb23ab40d98e/crop/175x33/1813x1126/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/05/17333953634925.jpg"
-      alt="Founders"
-    />
-
-    <!-- Header -->
-    <div class="header">
-      <p class="label">Forged in Fire</p>
-      <h1>Book a Slot 🔥</h1>
-      <p class="subtitle">30 min · Present a demo &amp; get feedback</p>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Cards -->
     <div class="cards">
 
+      <!-- Pablo -->
       <a class="card" href="https://calendar.app.google/bgnXK2Xvd51op87eA" target="_blank" rel="noopener">
         <div class="avatar avatar-pablo">P</div>
         <div class="card-info">
@@ -258,6 +210,7 @@
         <span class="arrow">→</span>
       </a>
 
+      <!-- Javi -->
       <a class="card" href="https://calendar.app.google/jxmPh9TQoYHhZYEa8" target="_blank" rel="noopener">
         <div class="avatar avatar-javi">J</div>
         <div class="card-info">
@@ -267,6 +220,7 @@
         <span class="arrow">→</span>
       </a>
 
+      <!-- Luis -->
       <div class="card disabled">
         <div class="avatar avatar-luis">L</div>
         <div class="card-info">
@@ -277,18 +231,17 @@
       </div>
 
     </div>
+  </main>
 
-    <footer>
-      <span>Powered by</span>
-      <img
-        src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/ddc194f4-de55-49cf-bfd9-de92649773de.png"
-        alt="HappyRobot"
-        onerror="this.style.display='none';"
-      />
-      <span>HappyRobot</span>
-    </footer>
-
-  </div>
+  <footer>
+    <span>Powered by</span>
+    <img
+      src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/ddc194f4-de55-49cf-bfd9-de92649773de.png"
+      alt="HappyRobot"
+      onerror="this.style.display='none'; this.nextSibling.style.display='inline';"
+    />
+    <span style="display:none; font-weight:600; font-size:13px; color:rgba(255,255,255,0.5);">HappyRobot</span>
+  </footer>
 
 </body>
 </html>
