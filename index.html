@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Slot 🔥 — Forged in Fire</title>
+
+  <!-- Open Graph / Slack preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Book a Slot 🔥 — Forged in Fire" />
+  <meta property="og:description" content="30 min · Present a demo & get feedback with a HappyRobot co-founder." />
+  <meta property="og:image" content="https://e01-phantom-expansion.uecdn.es/216a1cde343471623850cb23ab40d98e/crop/175x33/1813x1126/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/05/17333953634925.jpg" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Background photo with dark overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url('https://e01-phantom-expansion.uecdn.es/216a1cde343471623850cb23ab40d98e/crop/175x33/1813x1126/resize/1200/f/webp/assets/multimedia/imagenes/2024/12/05/17333953634925.jpg');
+      background-size: cover;
+      background-position: center top;
+      filter: brightness(0.35);
+      z-index: 0;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      padding: 32px 20px 24px;
+      animation: fadeIn 0.6s ease both;
+    }
+
+    /* Header */
+    .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 32px;
+    }
+
+    /* Cards */
+    .cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.18s ease, background 0.18s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .card.disabled {
+      cursor: default;
+      opacity: 0.65;
+    }
+
+    .card.disabled:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Avatar */
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      font-weight: 700;
+      flex-shrink: 0;
+      color: #fff;
+    }
+
+    .avatar-pablo  { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+    .avatar-javi   { background: linear-gradient(135deg, #1a6fa8, #2980b9); }
+    .avatar-luis   { background: linear-gradient(135deg, #1e8449, #27ae60); }
+
+    /* Card text */
+    .card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .card-name {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .card-role {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 2px;
+    }
+
+    /* Arrow */
+    .arrow {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.35);
+      flex-shrink: 0;
+    }
+
+    /* Coming soon badge */
+    .badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 20px;
+      padding: 3px 9px;
+      color: rgba(255, 255, 255, 0.55);
+      flex-shrink: 0;
+    }
+
+    /* Footer */
+    footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 36px;
+      padding-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      animation: fadeIn 0.6s 0.2s ease both;
+    }
+
+    footer img {
+      height: 28px;
+      opacity: 0.5;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Mobile */
+    @media (max-width: 520px) {
+      h1 { font-size: 26px; }
+      main { padding: 24px 16px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <main>
+    <p class="label">Founders</p>
+    <h1>Book a Slot 🔥</h1>
+    <p class="subtitle">30 min · Present a demo &amp; get feedback</p>
+
+    <div class="cards">
+
+      <!-- Pablo -->
+      <a class="card" href="https://calendar.app.google/bgnXK2Xvd51op87eA" target="_blank" rel="noopener">
+        <div class="avatar avatar-pablo">P</div>
+        <div class="card-info">
+          <div class="card-name">Pablo</div>
+          <div class="card-role">Co-founder</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Javi -->
+      <a class="card" href="https://calendar.app.google/jxmPh9TQoYHhZYEa8" target="_blank" rel="noopener">
+        <div class="avatar avatar-javi">J</div>
+        <div class="card-info">
+          <div class="card-name">Javi</div>
+          <div class="card-role">Co-founder</div>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+
+      <!-- Luis -->
+      <div class="card disabled">
+        <div class="avatar avatar-luis">L</div>
+        <div class="card-info">
+          <div class="card-name">Luis</div>
+          <div class="card-role">Co-founder</div>
+        </div>
+        <span class="badge">Coming soon</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <span>Powered by</span>
+    <img
+      src="https://s3-us-west-2.amazonaws.com/cbi-image-service-prd/original/ddc194f4-de55-49cf-bfd9-de92649773de.png"
+      alt="HappyRobot"
+      onerror="this.style.display='none'; this.nextSibling.style.display='inline';"
+    />
+    <span style="display:none; font-weight:600; font-size:13px; color:rgba(255,255,255,0.5);">HappyRobot</span>
+  </footer>
+
+</body>
+</html>
